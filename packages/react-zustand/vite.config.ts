@@ -7,7 +7,6 @@ export default defineConfig(({ command, mode }) => {
   const customConfig = {
     base: '/',
     resolve: {
-      preserveSymlinks: true,
       alias: [
         {
           find: '@',
