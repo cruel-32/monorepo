@@ -5,7 +5,7 @@ export interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTML
   buttonType?: Colors;
   className?: string;
   size?: 'small' | 'medium' | 'large';
-  label: string;
+  label?: string;
   isLoading?: boolean;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
@@ -16,6 +16,7 @@ export const Button = ({
   isLoading = false,
   label,
   className,
+  children,
   ...props
 }: ButtonProps) => {
   return (
@@ -24,7 +25,7 @@ export const Button = ({
       className={classnames('btns', buttonType)}
       {...props}
     >
-      {label}
+      {label || children}
     </button>
   );
 };
