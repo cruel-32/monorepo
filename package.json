@@ -8,9 +8,16 @@
     "dev:zustand": "yarn workspace @monorepo/react-zustand dev",
     "dev:common": "yarn workspace @monorepo/common dev",
     "dev:storybook": "yarn workspace @monorepo/common storybook",
-    "dev:all": "concurrently \"yarn workspace @monorepo/react-zustand dev\" \"yarn workspace @monorepo/common storybook\""
+    "dev:all": "concurrently \"yarn workspace @monorepo/react-zustand dev\" \"yarn workspace @monorepo/common storybook\"",
+    "lint": "eslint \"./src/**/*.{ts,js,tsx}\" --fix",
+    "format": "prettier --write src/",
+    "prettier": "prettier --write --config ./.prettierrc \"./src/**/*.{ts,js,tsx}\""
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "eslint": "^9.5.0",
+    "prettier": "^3.3.2"
   }
 }

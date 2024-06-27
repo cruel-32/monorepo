@@ -1,9 +1,11 @@
-import { useState } from 'react'
-import reactLogo from '@/assets/react.svg'
+import { useState } from 'react';
 import { Button } from '@monorepo/common/src/components/atoms/Button';
+import reactLogo from '@monorepo/common/src/assets/react.svg';
+import classnames from 'classnames';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  console.log('classnames ::::: ', classnames);
 
   return (
     <>
@@ -19,7 +21,7 @@ function App() {
         </Button>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

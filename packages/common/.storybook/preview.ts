@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react';
-import '@monorepo/common/src/styles/common.scss'
+import '@monorepo/common/src/styles/common.scss';
 
 const preview: Preview = {
   parameters: {
