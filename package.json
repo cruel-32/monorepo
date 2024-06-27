@@ -8,7 +8,7 @@
     "dev:zustand": "yarn workspace @monorepo/react-zustand dev",
     "dev:common": "yarn workspace @monorepo/common dev",
     "dev:storybook": "yarn workspace @monorepo/common storybook",
-    "dev:all": "concurrently \"yarn workspace @monorepo/react-zustand dev\" \"yarn workspace @monorepo/common dev\" \"yarn workspace @monorepo/common storybook\""
+    "dev:all": "concurrently \"yarn workspace @monorepo/react-zustand dev\" \"yarn workspace @monorepo/common storybook\""
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

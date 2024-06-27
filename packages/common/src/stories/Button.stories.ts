@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button, ButtonProps } from '@/components/atoms/Button';
+import { Button, ButtonProps } from '@monorepo/common/src/components/atoms/Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
