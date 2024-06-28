@@ -7,7 +7,7 @@
   "editor.formatOnSave": true,
   "eslint.codeActionsOnSave.rules": null,
   "eslint.options": {
-    "configFile": "packages/react-zustand/eslint.config.js"
+    "configFile": "package/eslint-config/index.js"
   },
   "eslint.validate": [
     "typescript",

@@ -8879,6 +8879,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "monorepo@workspace:."
   dependencies:
+    "@monorepo/prettier-config": "workspace:*"
     concurrently: "npm:^8.2.2"
     eslint: "npm:^9.5.0"
     prettier: "npm:^3.3.2"
