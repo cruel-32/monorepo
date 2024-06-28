@@ -14,8 +14,10 @@
     "prettier": "prettier --write --config ./.prettierrc \"./src/**/*.{ts,js,tsx}\""
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "@monorepo/prettier-config": "workspace:*"
   },
+  
   "dependencies": {
     "eslint": "^9.5.0",
     "prettier": "^3.3.2"

@@ -2,5 +2,11 @@
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
-  }
+  },
+  "prettier.configPath": "packages/prettier-config/index.js",
+  "editor.formatOnSave": true,
+  "eslint.codeActionsOnSave.rules": null,
+  "eslint.options": {
+    "configFile": "packages/react-zustand/eslint.config.js"
+  },
 }

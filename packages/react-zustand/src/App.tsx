@@ -5,13 +5,16 @@ import classnames from 'classnames';
 
 function App() {
   const [count, setCount] = useState(0);
-  console.log('classnames ::::: ', classnames);
+
+const test = (item) => {
+  console.log('test :::: ', item);
+};
 
   return (
     <>
       <div>
         <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+          <img src={reactLogo} className="logo react" />
         </a>
       </div>
       <h1>Vite + React</h1>
