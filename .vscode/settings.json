@@ -9,4 +9,8 @@
   "eslint.options": {
     "configFile": "packages/react-zustand/eslint.config.js"
   },
+  "eslint.validate": [
+    "typescript",
+    "typescriptreact"
+  ]
 }
