@@ -3,10 +3,15 @@
     "**/.yarn": true,
     "**/.pnp.*": true
   },
-  "prettier.configPath": "packages/prettier-config/index.js",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
   "editor.formatOnSave": true,
   "eslint.options": {
-    "overrideConfigFile": "package/eslint-config/index.js",
+    "overrideConfigFile": "packages/eslint-config/index.js"
   },
   "eslint.validate": ["typescript", "typescriptreact"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.configPath": "packages/prettier-config/index.js",
+  "prettier.requireConfig": true
 }

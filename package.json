@@ -11,6 +11,7 @@
     "dev:storybook": "yarn workspace @monorepo/common storybook",
     "ilnt:storybook": "yarn workspace @monorepo/common lint",
     "dev:all": "concurrently \"yarn workspace @monorepo/react-zustand dev\" \"yarn workspace @monorepo/common storybook\"",
+    "lint:all": "yarn workspace @monorepo/react-zustand lint && yarn workspace @monorepo/common lint && yarn workspace @monorepo/eslint-config lint && yarn workspace @monorepo/prettier-config lint",
     "lint": "eslint \"./src/**/*.{ts,js,tsx}\" --fix",
     "format": "prettier --write src/",
     "prettier": "prettier --write --config ./.prettierrc \"./src/**/*.{ts,js,tsx}\""
