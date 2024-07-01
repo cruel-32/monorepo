@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@monorepo/common/src/components/atoms/Button';
 import reactLogo from '@monorepo/common/src/assets/react.svg';
 import classnames from 'classnames';
@@ -6,9 +6,13 @@ import classnames from 'classnames';
 function App() {
   const [count, setCount] = useState(0);
 
-const test = (item) => {
-  console.log('test :::: ', item);
-};
+  const test = (item) => {
+    console.log('test :::: ', item);
+  };
+
+  useEffect(() => {
+    test('test');
+  }, []);
 
   return (
     <>

@@ -6,8 +6,10 @@
   ],
   "scripts": {
     "dev:zustand": "yarn workspace @monorepo/react-zustand dev",
+    "lint:zustand": "yarn workspace @monorepo/react-zustand lint",
     "dev:common": "yarn workspace @monorepo/common dev",
     "dev:storybook": "yarn workspace @monorepo/common storybook",
+    "ilnt:storybook": "yarn workspace @monorepo/common lint",
     "dev:all": "concurrently \"yarn workspace @monorepo/react-zustand dev\" \"yarn workspace @monorepo/common storybook\"",
     "lint": "eslint \"./src/**/*.{ts,js,tsx}\" --fix",
     "format": "prettier --write src/",
