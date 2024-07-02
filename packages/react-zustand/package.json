@@ -8,9 +8,12 @@
     "build": "tsc && vite build",
     "lint": "eslint --fix",
     "preview": "vite preview",
-    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css,html}\""
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css,html}\"",
+    "test": "vitest"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
     "@typescript-eslint/parser": "^7.14.1",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.19",
@@ -25,7 +28,8 @@
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.2",
     "typescript-eslint": "^7.14.1",
-    "vite-plugin-svgr": "^4.2.0"
+    "vite-plugin-svgr": "^4.2.0",
+    "vitest": "^1.6.0"
   },
   "devDependencies": {
     "@monorepo/common": "workspace:*",

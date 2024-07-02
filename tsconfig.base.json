@@ -21,7 +21,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
     // "verbatimModuleSyntax" : false,
-  },
+  }
 }

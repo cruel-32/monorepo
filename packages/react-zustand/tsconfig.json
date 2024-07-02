@@ -2,13 +2,9 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"],
-    },
+      "@/*": ["./src/*"]
+    }
   },
-  "include": [
-    "src",
-    "vite.config.ts",
-    "src/types/*.d.ts",
-    "../common/src/types/*.d.ts"
-  ]
+  "include": ["src", "vite.config.ts", "src/types/*.d.ts", "../common/src/types/*.d.ts"],
+  "exclude": ["node_modules", "dist"]
 }
