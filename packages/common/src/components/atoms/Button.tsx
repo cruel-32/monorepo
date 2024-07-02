@@ -1,28 +1,16 @@
-import { DetailedHTMLProps, ButtonHTMLAttributes } from 'react';
+import { FC } from 'react';
+// import { FC, DetailedHTMLProps, ButtonHTMLAttributes } from 'react';
 import classnames from 'classnames';
+import { Button as HButton, ButtonProps } from '@headlessui/react';
+export type { ButtonProps } from '@headlessui/react';
 
-export interface ButtonProps
-  extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  buttonType?: Colors;
-  className?: string;
-  size?: 'small' | 'medium' | 'large';
-  label?: string;
-  isLoading?: boolean;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-}
+const customClassName =
+  'border border-transparent text-white bg-blue-600 hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-200';
 
-export const Button = ({
-  buttonType = 'primary',
-  size = 'medium',
-  isLoading = false,
-  label,
-  className,
-  children,
-  ...props
-}: ButtonProps) => {
+export const Button: FC<ButtonProps> = ({ className, children, ...props }) => {
   return (
-    <button type="button" className={classnames('btns', buttonType, size)} {...props}>
-      {label || children}
-    </button>
+    <HButton type="button" className={classnames(customClassName, className)} {...props}>
+      {children}
+    </HButton>
   );
 };

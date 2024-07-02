@@ -12,7 +12,9 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     className: { control: 'text' },
-    size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
+    disabled: {
+      control: 'boolean'
+    },
   },
   args: { onClick: fn() },
 } satisfies Meta<ButtonProps>;
@@ -22,14 +24,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    buttonType: 'primary',
-    label: 'Button',
+    children: 'Button',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    buttonType: 'secondary',
-    label: 'Button',
+    children: 'Button',
   },
 };
