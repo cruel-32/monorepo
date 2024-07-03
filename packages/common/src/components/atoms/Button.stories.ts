@@ -13,7 +13,7 @@ const meta = {
   argTypes: {
     className: { control: 'text' },
     disabled: {
-      control: 'boolean'
+      control: 'boolean',
     },
   },
   args: { onClick: fn() },

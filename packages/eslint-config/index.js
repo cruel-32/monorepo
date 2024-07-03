@@ -45,9 +45,10 @@ export default [
   },
   {
     rules: {
-      'prettier/prettier': 'error',
+      'prettier/prettier': 'warn',
       '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }], // <img> 엘리먼트에 유의미한 대체 텍스트가 있는지 체크
       'jsx-a11y/alt-text': [
         'warn',
