@@ -11,6 +11,24 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
+    variant: {
+      description: '버튼 스타일을 설정합니다.',
+      defaultValue: 'contained',
+      options: ['text', 'contained', 'outlined'],
+      control: {
+        type: 'select',
+      },
+    },
+    color: {
+      description: '버튼의 색상을 MUI 기본 제공 설정값으로 변경합니다.',
+      defaultValue: 'primary',
+      options: [
+        'inherit', 'primary', 'secondary', 'success', 'error', 'info', 'warning'
+      ],
+      control: {
+        type: 'select',
+      },
+    },
     className: {
       description: 'class를 추가합니다.',
       control: 'text'
@@ -19,14 +37,11 @@ const meta = {
       description: 'disabled 상태를 변경합니다.',
       control: 'boolean',
     },
-    variant: {
-      description: '버튼 스타일을 설정합니다.',
-      defaultValue: 'contained',
-      options: ['text', 'contained', 'outlined'],
-      control: {
-        type: 'select',
-      },
-    }
+    fullWidth: {
+      description: 'Button을 감싼 컨테이너 전체 넓이를 차지합니다.',
+      defaultValue: false,
+      control: 'boolean',
+    },
   },
   args: { onClick: fn() },
 } satisfies Meta<ButtonProps>;
