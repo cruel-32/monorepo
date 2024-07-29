@@ -11,10 +11,22 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    className: { control: 'text' },
+    className: {
+      description: 'class를 추가합니다.',
+      control: 'text'
+    },
     disabled: {
+      description: 'disabled 상태를 변경합니다.',
       control: 'boolean',
     },
+    variant: {
+      description: '버튼 스타일을 설정합니다.',
+      defaultValue: 'contained',
+      options: ['text', 'contained', 'outlined'],
+      control: {
+        type: 'select',
+      },
+    }
   },
   args: { onClick: fn() },
 } satisfies Meta<ButtonProps>;
@@ -22,14 +34,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Contained: Story = {
   args: {
     children: 'Button',
+    variant: 'contained',
   },
 };
 
-export const Secondary: Story = {
+export const Outlined: Story = {
   args: {
     children: 'Button',
+    variant: 'outlined',
   },
 };
