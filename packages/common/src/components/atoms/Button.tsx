@@ -4,9 +4,9 @@ import classnames from 'classnames';
 import MButton, { ButtonProps } from '@mui/material/Button';
 export type { ButtonProps } from '@mui/material/Button';
 
-export const Button: FC<ButtonProps> = ({ className, children, variant, ...props }) => {
+export const Button: FC<ButtonProps> = ({ className, children, ...props }) => {
   return (
-    <MButton variant={variant} className={classnames(className)} {...props}>
+    <MButton className={classnames(className)} {...props}>
       {children}
     </MButton>
   );
