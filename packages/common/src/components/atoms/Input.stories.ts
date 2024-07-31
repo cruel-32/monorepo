@@ -1,4 +1,4 @@
-import type { Meta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { Input, InputProps } from '@monorepo/common/src/components/atoms/Input';
 
@@ -38,8 +38,32 @@ const meta = {
       control: 'boolean',
       type: { name: 'boolean', required: false },
     },
+    type: {
+      description: 'Input 타입을 설정합니다.',
+      defaultValue: 'text',
+      options: [
+        'text', 'number', 'password', 'email', 'tel', 'url'
+      ],
+      control: {
+        type: 'select',
+      },
+      type: { name: 'string', required: false },
+    }
   },
-  args: { onClick: fn() },
+  args: { onChange: fn() },
 } satisfies Meta<InputProps>;
 
 export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const TextInput: Story = {
+  args: {
+    type: 'text',
+  },
+};
+
+export const NumberInput: Story = {
+  args: {
+    type: 'number',
+  },
+};

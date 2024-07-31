@@ -1,36 +1,58 @@
 import { create } from 'zustand'
 import { immer } from 'zustand/middleware/immer'
 
+import type { Member } from '@/models/member/Member'
+
 interface MemberStore {
-    memberDetail: {
-        id: number;
-        name: string;
-        age: number;
-        job: string;
-    },
-    members: MemberStore['memberDetail'][],
+    memberDetail: Member,
+    members: Member[],
     getMemberDetail: (id: number) => Promise<void>,
-    getMembers: () => Promise<void>,
     removeMember: (id: number) => void,
     removeAllMembers: () => void,
-    pushMember: (member: MemberStore['memberDetail']) => void,
-    setMember: (newMember: Partial<MemberStore['memberDetail']>) => void,
+    insertMember: (member: Member) => void,
+    updateMember: (id: number, member: Member) => void,
+    setMember: (newMember: Partial<Member>) => void,
+    clearMember: () => void,
 }
 
 const useMemberStore = create<MemberStore>()(
     immer((set) => (
         {
             memberDetail: {
-                id: 0,
+                id: -1,
                 name: '',
-                age: 0,
+                age: -1,
                 job: '',
             },
-            members: [],
-            pushMember: (member: MemberStore['memberDetail']) => set((state) => ({ members: [...state.members, member] })),
+            members: [
+                {
+                    id: 1,
+                    name: 'John Doe',
+                    age: 31,
+                    job: 'Software Engineer',
+                },
+                {
+                    id: 2,
+                    name: 'Jane Doe',
+                    age: 32,
+                    job: 'Software Engineer',
+                },
+            ],
+            insertMember: (member: Member) => set((state) => {
+                const lastId = state.members.at(-1)?.id ?? 0;
+                state.members = [...state.members, { ...member, id: lastId + 1, }]
+            }),
+            updateMember: (id: number, member: Member) => set((state) => {
+                const index = state.members.findIndex((member) => member.id === id)
+                console.log('index ::::: ', index)
+                if (index! !== -1) {
+                    state.members[index] = member;
+                }
+            }),
             setMember: (newMember) => set((state) => ({ memberDetail: { ...state.memberDetail!, ...newMember } })),
+            clearMember: () => set((state) => { state.memberDetail = { id: -1, name: '', age: -1, job: '' } }),
             getMemberDetail: async (id: number) => {
-                const memberDetail: MemberStore['memberDetail'] = await new Promise((resolve) => {
+                const memberDetail: Member = await new Promise((resolve) => {
                     setTimeout(() => {
                         resolve({
                             id: id,
@@ -38,36 +60,9 @@ const useMemberStore = create<MemberStore>()(
                             age: 31,
                             job: 'Software Engineer',
                         })
-                    }, 1000)
+                    }, 200)
                 });
                 set({ memberDetail })
-            },
-            getMembers: async () => {
-                const members: MemberStore['members'] = await new Promise((resolve) => {
-                    setTimeout(() => {
-                        resolve([
-                            {
-                                id: 1,
-                                name: 'John Doe',
-                                age: 31,
-                                job: 'Software Engineer',
-                            },
-                            {
-                                id: 2,
-                                name: 'Jane Doe',
-                                age: 29,
-                                job: 'Designer',
-                            },
-                            {
-                                id: 3,
-                                name: 'James Smith',
-                                age: 33,
-                                job: 'Product Manager',
-                            },
-                        ])
-                    }, 1000)
-                });
-                set({ members })
             },
             removeMember: (id: number) => set((state) => ({ members: state.members.filter((member) => member?.id !== id) })),
             removeAllMembers: () => set({ members: [] }),
