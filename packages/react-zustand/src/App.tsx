@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+
 import { Button } from '@monorepo/common/src/components/atoms/Button';
 import { Input } from '@monorepo/common/src/components/atoms/Input';
 import reactLogo from '@monorepo/common/src/assets/react.svg';
+
+import TestComponents from '@/components/TestComponents';
 
 import '@/index.css';
 import '@monorepo/common/src/styles/common.css';
 
 import useMemberStore from '@/store/memberStore';
-
-import TestComponents from './components/TestComponents';
 
 import { createMemberSchema } from '@/models/member/Member';
 
@@ -59,7 +62,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="react" />
@@ -126,7 +129,7 @@ function App() {
           ))}
         </div>
       </div>
-    </>
+    </LocalizationProvider>
   );
 }
 

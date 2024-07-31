@@ -20,6 +20,7 @@
     "@mdx-js/react": "^3.0.1",
     "@mui/icons-material": "^5.16.5",
     "@mui/material": "6.0.0-beta.3",
+    "@mui/x-date-pickers": "^7.11.1",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "classnames": "^2.5.1",
