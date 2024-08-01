@@ -18,6 +18,11 @@ export default defineConfig({
       },
     ],
   },
+  server: {
+    proxy: {
+      '/v1': 'http://localhost:9090',
+    },
+  },
   build: {
     outDir: '../../dist/react-zustand',
     emptyOutDir: true,

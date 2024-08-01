@@ -23,10 +23,12 @@ function App() {
 
   useEffect(() => {
     test('useEffect');
+    console.log('import.meta.env.VITE_PROFIlE ::: ', import.meta.env);
   }, []);
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
+      test :: {import.meta.env.VITE_PROFIlE}
       <div>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="react" />
