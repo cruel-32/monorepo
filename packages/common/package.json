@@ -24,8 +24,8 @@
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "classnames": "^2.5.1",
-    "eslint": "^9.6.0",
-    "prettier": "^3.3.2",
+    "eslint": "^9.8.0",
+    "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "typescript": "^5.5.2",
@@ -49,7 +49,7 @@
     "autoprefixer": "^10.4.19",
     "sass": "^1.77.6",
     "storybook": "^8.1.10",
-    "vite": "^5.3.1"
+    "vite": "^5.3.4"
   },
   "eslint": "@monorepo/eslint-config",
   "prettier": "@monorepo/prettier-config"
