@@ -63,6 +63,7 @@ export default [
       'jsx-a11y/role-supports-aria-props': 'warn', // DOM에 정의되지 않은 속성을 사용했는지 체크 (emotion css 속성 등 예외 케이스가 있으므로 기본은 off)
       'react/no-unknown-property': 'off', // 정의한 props 중에 빠진게 있는지 체크 (NextPage 등 일부 추상화 컴포넌트에서 복잡해지므로 기본은 off)
       'react/prop-types': 'off',
+      '@typescript-eslint/no-non-null-asserted-optional-chain': 'warn',
     },
   },
   eslintPluginPrettierRecommended,

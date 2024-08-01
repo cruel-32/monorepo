@@ -23,9 +23,7 @@ const meta = {
     color: {
       description: '버튼의 색상을 MUI 기본 제공 설정값으로 변경합니다.',
       defaultValue: 'primary',
-      options: [
-        'inherit', 'primary', 'secondary', 'success', 'error', 'info', 'warning'
-      ],
+      options: ['inherit', 'primary', 'secondary', 'success', 'error', 'info', 'warning'],
       control: {
         type: 'select',
       },

@@ -14,9 +14,7 @@ const meta = {
     color: {
       description: '버튼의 색상을 MUI 기본 제공 설정값으로 변경합니다.',
       defaultValue: 'primary',
-      options: [
-        'inherit', 'primary', 'secondary', 'success', 'error', 'info', 'warning'
-      ],
+      options: ['inherit', 'primary', 'secondary', 'success', 'error', 'info', 'warning'],
       control: {
         type: 'select',
       },
@@ -41,14 +39,12 @@ const meta = {
     type: {
       description: 'Input 타입을 설정합니다.',
       defaultValue: 'text',
-      options: [
-        'text', 'number', 'password', 'email', 'tel', 'url'
-      ],
+      options: ['text', 'number', 'password', 'email', 'tel', 'url'],
       control: {
         type: 'select',
       },
       type: { name: 'string', required: false },
-    }
+    },
   },
   args: { onChange: fn() },
 } satisfies Meta<InputProps>;
