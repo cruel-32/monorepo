@@ -12,10 +12,7 @@ import MemberList from '@/components/member/MemberList';
 import '@/index.css';
 import '@monorepo/common/src/styles/common.css';
 
-import useMemberStore from '@/store/memberStore';
-
 function App() {
-  const memberStore = useMemberStore();
   const [count, setCount] = useState(0);
 
   const test = (item: string) => {
