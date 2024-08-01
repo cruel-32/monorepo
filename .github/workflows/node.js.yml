@@ -5,13 +5,12 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "react-styled-mui" ]
+    branches: ['react-styled-mui']
   pull_request:
-    branches: [ "react-styled-mui" ]
+    branches: ['react-styled-mui']
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,10 +19,14 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install dependencies
-    - run: yarn
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: corepack enable
+      - run: corepack enable
+      - name: yarn version update
+      - run: yarn set stable
+      - name: dependencies install
+      - run: yarn
