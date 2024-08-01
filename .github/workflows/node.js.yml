@@ -26,7 +26,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: corepack enable
       - run: corepack enable
-      - name: yarn version update
       - run: yarn set stable
-      - name: dependencies install
       - run: yarn
