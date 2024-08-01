@@ -9,6 +9,6 @@
     }
   ],
   "scripts": {
-    "build": "npm i yarn && yarn set version latest && yarn install && yarn build"
+    "build": "yarn set version latest && yarn install && yarn build"
   }
 }
