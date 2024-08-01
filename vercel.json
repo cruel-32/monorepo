@@ -4,11 +4,8 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "build"
+        "distDir": "dist"
       }
     }
-  ],
-  "scripts": {
-    "build": "yarn set version latest && yarn install && yarn build"
-  }
+  ]
 }
